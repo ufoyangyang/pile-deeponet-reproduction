@@ -143,3 +143,13 @@ PILE-DeepONet 把"热失控预测"写成两个算子的复合：
 ## 6. 许可
 
 MIT（见 [LICENSE](LICENSE)）。论文版权归原作者/Elsevier 所有，本仓库仅包含独立实现的代码。
+
+## 7. 附：在不稳定网络下推送
+
+`git push` 走 `github.com:443`，在部分网络环境下会被重置；而 `api.github.com` 可用。
+`scripts/push_via_api.py` 用 GitHub 的 Git Data API 直接上传整棵树（blob → tree → commit → ref），
+适合作为受限网络下的备用推送方式：
+
+```bash
+python scripts/push_via_api.py
+```
