@@ -1,0 +1,132 @@
+{
+  "physics": {
+    "rho": 2790.0,
+    "cp": 990.0,
+    "k": 0.7,
+    "E": 99000.0,
+    "A": 20000000.0,
+    "H": 260000.0,
+    "W": 2291.3,
+    "Rc": 8.314,
+    "Rg": 189.0,
+    "Gas0": 0.0088,
+    "radius": 0.023,
+    "height": 0.08,
+    "canister_volume": 0.00395,
+    "T_init": 35.0,
+    "T_target": 270.0,
+    "T_cool": 35.0,
+    "h_heater": 200.0,
+    "c_off": 0.1,
+    "n_r": 31,
+    "dt": 0.05,
+    "t_end": 5400.0,
+    "save_dt": 2.0
+  },
+  "split": {
+    "ramps_train": [
+      2100,
+      2145,
+      2190,
+      2235,
+      2280,
+      2325,
+      2370,
+      2415,
+      2460,
+      2505,
+      2550,
+      2595,
+      2640,
+      2685,
+      2730,
+      2775,
+      2820,
+      2865,
+      2910,
+      2955,
+      3000
+    ],
+    "h_cool": [
+      7.0,
+      10.0,
+      13.0,
+      16.0,
+      19.0
+    ],
+    "ramps_ood": [
+      3100,
+      3140,
+      3180,
+      3220,
+      3260,
+      3300
+    ],
+    "h_ood": [
+      7.0,
+      13.0,
+      19.0
+    ],
+    "exp_condition": [
+      2600.0,
+      7.0
+    ],
+    "n_train": 84,
+    "n_val": 10,
+    "n_test1": 11,
+    "seed": 0
+  },
+  "model": {
+    "q": 300,
+    "hidden": 100,
+    "depth": 4,
+    "n_latent_features": 4,
+    "history_len": 31,
+    "short_len": 11,
+    "sample_dt": 30.0,
+    "t_threshold": 120.0,
+    "lead_time": 1200.0,
+    "latent_anchors": [
+      900.0,
+      990.0,
+      1110.0,
+      1200.0
+    ],
+    "local_window": 300.0,
+    "t_pred": 1500.0,
+    "stan": true,
+    "separated_trunk": true,
+    "use_latent_operator": true,
+    "T_min": 20.0,
+    "T_max": 520.0,
+    "gas_ref": 0.0088
+  },
+  "train": {
+    "iters": 20000,
+    "lr": 0.001,
+    "lr_decay_every": 2000,
+    "lr_decay": 0.1,
+    "n_phy": 512,
+    "n_data": 512,
+    "n_bc": 256,
+    "n_ic": 256,
+    "physics_warmup": 800,
+    "physics_ramp": 800,
+    "w_phy": 1.0,
+    "w_data": 1.0,
+    "w_bc": 1.0,
+    "w_ic": 1.0,
+    "use_ntk": true,
+    "ntk_every": 1000,
+    "ntk_points": 32,
+    "ntk_clip": [
+      0.05,
+      20.0
+    ],
+    "use_physics": true,
+    "log_every": 250,
+    "eval_every": 2000,
+    "seed": 0,
+    "out_dir": "runs/base"
+  }
+}

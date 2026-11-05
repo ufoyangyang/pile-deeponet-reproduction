@@ -1,0 +1,20 @@
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# generated data (regenerate with `python scripts/make_dataset.py`)
+data/*.npz
+data/*.h5
+
+# training artefacts
+runs/
+*.pt
+!docs/**/*.png
+
+# local CUDA torch installation
+_libs_cuda/
+
+# run logs
+logs/

@@ -1,0 +1,7 @@
+# Core dependencies.  A CUDA build of PyTorch is strongly recommended
+# (the reference model was trained on an RTX 5090 in ~1 h per run):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+torch>=2.4
